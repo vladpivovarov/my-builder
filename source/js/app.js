@@ -1,7 +1,18 @@
-(function() {
-  'use strict';
+var module = function() {
 
-  setTimeout(function() {
-    document.querySelector('.greating_picture').classList.add('m--show');
-  }, 1000);
-})();
+    var init = function() {
+        _setUpListeners();
+        //    Действия которые нужно выполнить сразу
+    };
+
+    var _setUpListeners = function() {
+        //    Тут прослушка событий
+        console.log("Прослушка событий работает")
+    };
+
+    return {
+        init: init
+    }
+}();
+
+module.init();

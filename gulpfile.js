@@ -12,7 +12,8 @@ global.$ = {
   gulp: require('gulp'),
   del: require('del'),
   browserSync: require('browser-sync').create(),
-  gp: require('gulp-load-plugins')()
+  gp: require('gulp-load-plugins')(),
+  fs: require('fs')
 };
 
 $.path.task.forEach(function(taskPath) {
