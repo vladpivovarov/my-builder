@@ -1,0 +1,54 @@
+extends ../_template
+
+block variables
+	- var title = 'About page'
+
+block content
+		section.section.hero
+			ul.socials
+				each item in ["vk", "fb", "tw"]
+					li.socials__item
+						a(href="").socials__link
+							svg(class=`socials__svg socials__svg_${item}`)
+								use(xlink:href=`./assets/img/sprite.svg#${item}`)
+			a(href="").hamburger
+			a(href="").down-arrow
+			.hero__title
+				img(src="./").section-title
+				.user.hero__user-block
+					.user__photo
+					.user__name
+					.user__desc
+		section.section.about
+			.about__left
+				svg.triangle.triangle_fill_white
+				.title.about__section-title
+					|Обо мне
+				.user-about
+					.about-user__picture
+					.subtitle.about-user__title
+						|Кто я
+					.about-user__text
+						p= about.who1
+						p= about.who2
+			.about__right
+				svg.triangle.triangle_fill_beige
+				.about-data
+					.about-data__description
+						.subtitle.about-data__title
+							|Чем я могу быть вам полезен
+						.about-data__text
+							p= about.data
+					.about-data__content
+						ul.skills
+							each skillBlock in skills
+								li.skills__block
+									each skillGroup, skillTitle in skillBlock
+										h3.skills__title= skillTitle
+										ul.skills__list
+											each skill in skillGroup
+												li.skill
+													b.skill__name= skill
+													svg.skill__circle
+		section.section.map
+
