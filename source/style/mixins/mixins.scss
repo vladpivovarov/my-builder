@@ -1,0 +1,12 @@
+@mixin inline-block($align) {
+  display: inline-block;
+  vertical-align: $align;
+}
+
+@mixin font-roboto($style) {
+  font-family: "Roboto-#{$style}";
+}
+
+@mixin font-bernier($style) {
+  font-family: "BERNIER#{$style}-Regular";
+}
